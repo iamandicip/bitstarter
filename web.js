@@ -4,7 +4,7 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 var buffer = new Buffer("Hello world!");
 
-fs.readFile("./index.html", function (err, data){
+fs.readFile("./index.html", "utf-8", function (err, data){
     if(err){
 	console.log("error reading file index.html");
     }else{
@@ -13,10 +13,10 @@ fs.readFile("./index.html", function (err, data){
 });
 
 
-console.log("read from buffer: " + buffer.toString());
+console.log("read from buffer: " + buffer.toString("utf-8"));
 
 app.get('/', function(request, response) {
-  response.send(buffer.toString());
+  response.send(buffer.toString("utf-8", 0, buffer.length));
 });
 
 var port = process.env.PORT || 5000;
