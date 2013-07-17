@@ -27,7 +27,7 @@ var rest = require('restler');
 var cheerio = require('cheerio');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
-var URL_DEFAULT="http://shrouded-river-4957.herokuapp.com/index.html";
+var URL_DEFAULT="http://iamandicip-bitstarter.herokuapp.com/index.html";
 var DOWNLOADED_FILE_DEFAULT="d_index.html";
 
 var downloadFile = function(url){
